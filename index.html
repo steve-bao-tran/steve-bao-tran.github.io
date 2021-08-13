@@ -46,24 +46,24 @@
             <div class="social-network">
               <ul class="soial-icons">
                 <li>
-                  <a href="https://www.facebook.com/stevetranbao"
+                  <a href="https://www.facebook.com/stevetranbao" target="_blank"
                     ><i class="fa fa-facebook"></i></a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/tranbaothe">
+                  <a href="https://twitter.com/tranbaothe" target="_blank">
                     <i class="fa fa-twitter"></i></a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/in/bao-tran-30b6b4114">
+                  <a href="https://www.linkedin.com/in/bao-tran-30b6b4114" target="_blank">
                     <i class="fa fa-linkedin"></i></a>
                 </li>
                 <li>
                   <!-- <a href="#"><i class="fa fa-dribbble"></i></a> -->
-                  <a href="https://tranthebao.wordpress.com">
+                  <a href="https://tranthebao.wordpress.com" target="_blank">
                     <i class="fa fa-wordpress"></i></a>
                 </li>
                 <li>
-                  <a href="#"><i class="fa fa-rss"></i></a>
+                  <a href="#"><i class="fa fa-rss" target="_blank"></i></a>
                 </li>
               </ul>
             </div>
@@ -429,7 +429,7 @@
                     </div>
                     <div class="col-md-12">
                       <fieldset>
-                        <button type="submit" id="form-submit" class="button">
+                        <button type="submit" id="form-submit" class="button" onclick="sendEmail()">
                           Send Message
                         </button>
                       </fieldset>
@@ -452,6 +452,7 @@
     <script src="assets/js/owl-carousel.js"></script>
     <script src="assets/js/lightbox.js"></script>
     <script src="assets/js/custom.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
       //according to loftblog tut
       $(".main-menu li:first").addClass("active");
@@ -501,6 +502,21 @@
       $(window).scroll(function() {
         checkSection();
       });
+
+      function sendEmail() {
+        alert(12344);
+        Email.send({
+          Host: "smtp.gmail.com",
+          Username : "thebaotran1990@gmail.com",
+          Password : "dothinhutho",
+          To : 'akirahuy90@gmail.com',
+          From : "thebaotran1990@gmail.com",
+          Subject : "Test SMTP",
+          Body : "Tran The Boa testing...",
+        }).then(
+          message => alert("mail sent successfully")
+        );
+      }
     </script>
   </body>
 </html>
